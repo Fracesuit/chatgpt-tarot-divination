@@ -13,13 +13,13 @@ class Settings(BaseSettings):
     api_key: str = Field(default="sk-xxx", exclude=True)
     api_base: str = "https://api.openai.com/v1"
     model: str = "gpt-3.5-turbo"
-    rate_limit: str = "60/hour"
-    user_rate_limit: str = "600/hour"
-    github_client_id: str = ""
+    rate_limit: str = "70/hour"
+    user_rate_limit: str = "700/hour"
+    github_client_id: str = Field(default="secret", exclude=True)
     github_client_secret: str = Field(default="", exclude=True)
     jwt_secret: str = Field(default="secret", exclude=True)
-    ad_client: str = ""
-    ad_slot: str = ""
+    ad_client: str = Field(default="", exclude=True)
+    ad_slot: str = Field(default="", exclude=True)
 
     class Config:
         env_file = ".env"
